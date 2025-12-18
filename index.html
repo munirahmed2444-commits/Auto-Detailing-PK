@@ -3,64 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Detailing | Multan's Best PPF & Ceramic Studio</title>
+    <title>Auto Detailing | 3D Experience</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
 </head>
-<body class="bg-black text-white font-sans">
-    <nav class="flex justify-between items-center p-6 bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
-        <a href="index.html" class="text-xl md:text-2xl font-black text-red-600 uppercase italic">Auto Detailing</a>
-        <div class="hidden md:flex space-x-6 font-bold uppercase text-xs tracking-widest">
+<body class="bg-black text-white overflow-x-hidden">
+
+    <nav class="flex justify-between items-center p-6 bg-transparent fixed w-full z-50">
+        <a href="index.html" class="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Auto Detailing</a>
+        <div class="hidden md:flex space-x-8 font-bold uppercase text-xs tracking-widest">
+            <a href="about.html" class="hover:text-red-500 transition">About</a>
             <a href="services.html" class="hover:text-red-500 transition">Services</a>
             <a href="contact.html" class="hover:text-red-500 transition">Contact</a>
         </div>
-        <a href="https://wa.me/923017442222" class="bg-red-600 px-5 py-2 rounded-full text-xs font-bold uppercase">WhatsApp</a>
+        <a href="https://wa.me/923017442222" class="bg-red-600 px-6 py-2 rounded-full text-xs font-bold uppercase hover:scale-105 transition">WhatsApp</a>
     </nav>
 
-    <header class="relative h-[90vh] flex items-center justify-center text-center px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1920" alt="Shiny Luxury Car" class="w-full h-full object-cover opacity-60">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+    <main class="relative h-screen flex flex-col items-center justify-center text-center px-4">
+        <div class="glass p-10 md:p-20 rounded-[3rem] max-w-4xl">
+            <h2 class="text-red-600 font-black uppercase tracking-[0.3em] text-sm mb-4">Multan's Elite Studio</h2>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 uppercase tracking-tighter leading-none">
+                3D <span class="text-zinc-500">CAR</span> <br> PROTECTION
+            </h1>
+            <p class="text-zinc-400 mb-10 max-w-lg mx-auto leading-relaxed">
+                Experience the next generation of Ceramic Coating and Ultra PPF. We don't just wash cars; we preserve art.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="services.html" class="bg-white text-black px-10 py-4 rounded-full font-black hover:bg-red-600 hover:text-white transition-all uppercase text-sm">Explore Services</a>
+                <a href="contact.html" class="border border-white px-10 py-4 rounded-full font-black hover:bg-white hover:text-black transition-all uppercase text-sm">Get Quote</a>
+            </div>
         </div>
-        
-        <div class="relative z-10 max-w-4xl">
-            <a href="about.html" class="inline-block border border-red-600 text-red-600 px-6 py-2 rounded-full text-xs font-black uppercase mb-6 hover:bg-red-600 hover:text-white transition">More About Us</a>
-            <h1 class="text-5xl md:text-8xl font-black mb-4 uppercase tracking-tighter leading-none">THE ULTIMATE <br><span class="text-red-600 underline decoration-white decoration-4">PROTECTION</span></h1>
-            <p class="text-lg md:text-xl text-zinc-300 mb-8 max-w-2xl mx-auto font-medium">Certified installers of Nanotek Surface Science. Delivering unmatched quality in Multan for over 10 years.</p>
-            <a href="services.html" class="bg-white text-black px-10 py-5 rounded-full font-black hover:bg-red-600 hover:text-white transition uppercase tracking-widest text-sm shadow-xl shadow-red-900/20">Explore Our Services</a>
-        </div>
-    </header>
+    </main>
 
-    <section class="py-24 bg-zinc-950 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black uppercase mb-4">Why Choose <span class="text-red-600">Auto Detailing?</span></h2>
-                <div class="h-1 w-20 bg-red-600 mx-auto"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-zinc-900 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-zinc-800">
-                        <i class="fas fa-certificate text-2xl text-red-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 uppercase italic">Certified Experts</h3>
-                    <p class="text-zinc-500 text-sm">We are certified Nanotek installers, ensuring every car gets treated with international standards.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-zinc-900 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-zinc-800">
-                        <i class="fas fa-gem text-2xl text-red-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 uppercase italic">Premium Products</h3>
-                    <p class="text-zinc-500 text-sm">We only use Ultra PPF and Glass Coatings that provide long-lasting heat rejection and shine.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-zinc-900 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-zinc-800">
-                        <i class="fas fa-star text-2xl text-red-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 uppercase italic">5-Star Reputation</h3>
-                    <p class="text-zinc-500 text-sm">Multan’s top-rated studio with 4.8/5 stars and 68+ happy clients on Bosan Road.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Create Particles (Star Field Effect)
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 5000;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for(let i=0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 5;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const material = new THREE.PointsMaterial({ size: 0.005, color: '#ef4444' }); // Red particles
+        const particlesMesh = new THREE.Points(particlesGeometry, material);
+        scene.add(particlesMesh);
+
+        camera.position.z = 2;
+
+        // Mouse Movement Interaction
+        let mouseX = 0; let mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            particlesMesh.rotation.y += 0.001;
+            if (mouseX > 0) {
+                particlesMesh.rotation.x = -mouseY * 0.0001;
+                particlesMesh.rotation.y = mouseX * 0.0001;
+            }
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 </html>
