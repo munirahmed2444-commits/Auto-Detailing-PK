@@ -3,29 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Auto Detailing</title>
+    <title>Book Your Appointment | Auto Detailing</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #000; color: white; font-family: 'Inter', sans-serif; }
+        .glass-panel { background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .input-field { background: #0a0a0a; border: 1px solid #222; transition: all 0.3s ease; color: white; }
+        .input-field:focus { border-color: #dc2626; box-shadow: 0 0 15px rgba(220, 38, 38, 0.2); outline: none; }
+    </style>
 </head>
-<body class="bg-black text-white">
-    <nav class="flex justify-between items-center p-6 bg-zinc-900 border-b border-zinc-800">
-        <a href="index.html" class="text-xl font-black text-red-600 uppercase">Auto Detailing</a>
-    </nav>
+<body class="flex items-center justify-center min-h-screen p-4">
 
-    <section class="py-20 px-6 text-center max-w-3xl mx-auto">
-        <h2 class="text-4xl font-black uppercase mb-6 text-red-600">Get a Quote</h2>
-        <p class="text-zinc-400 mb-12 font-bold">9, Star Arcade, Bosan Rd, opposite DHA Gate, Multan.</p>
-        
-        <div class="bg-zinc-900 p-10 rounded-[3rem] border border-zinc-800 mb-10">
-            <a href="https://wa.me/923017442222" class="bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-2xl font-black text-xl flex items-center justify-center gap-3 transition">
-                <i class="fab fa-whatsapp text-3xl"></i> Chat on WhatsApp
+    <div class="w-full max-w-2xl">
+        <div class="mb-8">
+            <a href="index.html" class="text-zinc-500 hover:text-red-600 transition font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> Back to Main Home
             </a>
-            <p class="mt-6 text-zinc-500 font-bold uppercase tracking-widest text-xs">+92 301 7442222</p>
         </div>
 
-        <a href="index.html" class="text-zinc-500 hover:text-white transition font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2">
-            <i class="fas fa-home"></i> Return to Main Home
-        </a>
-    </section>
+        <div class="glass-panel p-8 md:p-12 rounded-[3rem] shadow-2xl">
+            <h1 class="text-4xl font-black uppercase tracking-tighter mb-2 italic">Book Your <span class="text-red-600">Session</span></h1>
+            <p class="text-zinc-500 mb-10 font-medium italic">Complete the form below and our specialist will contact you.</p>
+
+            <form action="https://formspree.io/f/xlgrkkjo" method="POST" class="space-y-6">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold ml-1">Full Name</label>
+                        <input type="text" name="full_name" placeholder="Ali Khan" class="input-field w-full p-4 rounded-2xl text-sm" required>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold ml-1">Email Address</label>
+                        <input type="email" name="email" placeholder="ali@example.com" class="input-field w-full p-4 rounded-2xl text-sm" required>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold ml-1">Car Make & Model</label>
+                        <input type="text" name="car_model" placeholder="e.g. Honda Civic 2024" class="input-field w-full p-4 rounded-2xl text-sm" required>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold ml-1">Select Service</label>
+                        <select name="service_type" class="input-field w-full p-4 rounded-2xl text-sm appearance-none text-zinc-400">
+                            <option value="PPF">Ultra PPF Protection</option>
+                            <option value="Ceramic">Ceramic Coating</option>
+                            <option value="Detailing">Detailing & Polish</option>
+                            <option value="Interior">Interior Restoration</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-sm transition-all transform hover:scale-[1.02] shadow-xl shadow-red-900/20 mt-4">
+                    Confirm Reservation
+                </button>
+
+                <p class="text-center text-[10px] text-zinc-600 uppercase font-bold tracking-[0.2em] pt-4">
+                    Multan's Most Trusted Detailing Studio
+                </p>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
