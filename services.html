@@ -6,6 +6,15 @@
     <title>Our Services | Auto Detailing Multan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Pulse Animation for WhatsApp */
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .whatsapp-btn { animation: pulse-green 2s infinite; }
+    </style>
 </head>
 <body class="bg-black text-white font-sans">
 
@@ -16,7 +25,9 @@
             <a href="about.html" class="hover:text-red-500 transition">About</a>
             <a href="booking.html" class="hover:text-red-500 transition text-red-600">Booking</a>
         </div>
-        <a href="https://wa.me/923017442222" class="bg-red-600 px-5 py-2 rounded-full text-xs font-bold uppercase">WhatsApp Us</a>
+        <a href="https://wa.me/923017442222" class="whatsapp-btn bg-green-600 p-3 rounded-full hover:bg-green-500 transition-all flex items-center justify-center shadow-lg">
+            <i class="fab fa-whatsapp text-2xl text-white"></i>
+        </a>
     </nav>
 
     <section class="py-20 px-6 max-w-6xl mx-auto">
@@ -35,7 +46,7 @@
                 <div class="p-8">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="fas fa-shield-halved text-red-600 text-xl"></i>
-                        <h3 class="text-2xl font-bold uppercase italic">Ultra PPF</h3>
+                        <h3 class="text-2xl font-bold uppercase italic">Ultimate PPF</h3>
                     </div>
                     <p class="text-zinc-400 text-sm leading-relaxed mb-6">
                         Paint Protection Film (PPF) is a clear, self-healing barrier that shields your car from rock chips, scratches, and road debris. Essential for Multan.
@@ -51,10 +62,10 @@
                 <div class="p-8">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="fas fa-wand-magic-sparkles text-red-600 text-xl"></i>
-                        <h3 class="text-2xl font-bold uppercase italic">Glass Coating</h3>
+                        <h3 class="text-2xl font-bold uppercase italic">Ceramic Coating</h3>
                     </div>
                     <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-                        Our advanced Glass Coating creates a permanent hydrophobic barrier. It repels dust and water while providing a mirror-like shine.
+                        Our advanced Ceramic Coating creates a permanent hydrophobic barrier. It repels dust and water while providing a mirror-like shine.
                     </p>
                     <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 hover:border-red-600 transition">Book Coating</a>
                 </div>
@@ -86,7 +97,7 @@
     </section>
 
     <footer class="py-10 text-center border-t border-zinc-900">
-        <p class="text-zinc-600 text-xs uppercase tracking-widest">© 2024 Auto Detailing & PPF Specialist Multan</p>
+        <p class="text-zinc-600 text-xs uppercase tracking-widest">© 2025 Auto Detailing & PPF Specialist Multan</p>
     </footer>
 
 </body>
