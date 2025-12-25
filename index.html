@@ -10,6 +10,14 @@
     <style>
         canvas { position: fixed; top: 0; left: 0; z-index: -1; }
         .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        /* Pulse Animation for WhatsApp */
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .whatsapp-btn { animation: pulse-green 2s infinite; }
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
@@ -21,7 +29,9 @@
             <a href="services.html" class="hover:text-red-500 transition">Services</a>
             <a href="booking.html" class="hover:text-red-500 transition">Booking</a>
         </div>
-        <a href="https://wa.me/923017442222" class="bg-red-600 px-6 py-2 rounded-full text-xs font-bold uppercase hover:scale-105 transition">WhatsApp</a>
+        <a href="https://wa.me/923017442222" class="whatsapp-btn bg-green-600 p-3 rounded-full hover:bg-green-500 transition-all flex items-center justify-center shadow-lg">
+            <i class="fab fa-whatsapp text-2xl text-white"></i>
+        </a>
     </nav>
 
     <main class="relative h-screen flex flex-col items-center justify-center text-center px-4">
@@ -47,7 +57,6 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Create Particles (Star Field Effect)
         const particlesGeometry = new THREE.BufferGeometry();
         const particlesCount = 5000;
         const posArray = new Float32Array(particlesCount * 3);
@@ -57,13 +66,12 @@
         }
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
-        const material = new THREE.PointsMaterial({ size: 0.005, color: '#ef4444' }); // Red particles
+        const material = new THREE.PointsMaterial({ size: 0.005, color: '#ef4444' });
         const particlesMesh = new THREE.Points(particlesGeometry, material);
         scene.add(particlesMesh);
 
         camera.position.z = 2;
 
-        // Mouse Movement Interaction
         let mouseX = 0; let mouseY = 0;
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
