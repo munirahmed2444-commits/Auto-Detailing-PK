@@ -3,33 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Auto Detailing</title>
+    <title>About Us | Auto Detailing Multan</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .star-gold { color: #facc15; }
+        
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .whatsapp-btn { animation: pulse-green 2s infinite; }
+    </style>
 </head>
-<body class="bg-black text-white font-sans">
-    <nav class="flex justify-between items-center p-6 bg-zinc-900 border-b border-zinc-800">
-        <a href="index.html" class="text-xl font-black text-red-600 uppercase">Auto Detailing</a>
+<body class="bg-black text-white overflow-x-hidden">
+
+    <nav class="flex justify-between items-center p-6 bg-transparent fixed w-full z-50">
+        <a href="index.html" class="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Auto Detailing</a>
+        <div class="hidden md:flex space-x-8 font-bold uppercase text-xs tracking-widest">
+            <a href="about.html" class="text-red-500 transition">About</a>
+            <a href="services.html" class="hover:text-red-500 transition">Services</a>
+            <a href="booking.html" class="hover:text-red-500 transition">Booking</a>
+        </div>
+        <a href="https://wa.me/923017442222" class="whatsapp-btn bg-green-600 p-3 rounded-full hover:bg-green-500 transition-all flex items-center justify-center shadow-lg">
+            <i class="fab fa-whatsapp text-2xl text-white"></i>
+        </a>
     </nav>
 
-    <section class="py-20 px-6 max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-black uppercase mb-8 text-red-600">About Auto Detailing</h2>
-        <p class="text-lg text-zinc-300 leading-relaxed mb-10">
-            With over a decade in the industry, we are the professionals you can trust to protect your investment. We are proud certified installers of Nanotek Surface Science.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div class="bg-zinc-900 p-8 rounded-3xl border border-zinc-800 text-center">
-                <h3 class="text-red-600 font-bold text-3xl italic">4.8 Stars</h3>
-                <p class="text-zinc-500 uppercase tracking-widest text-xs mt-2">68+ Google Reviews</p>
+    <main class="relative pt-32 flex flex-col items-center px-4">
+        <div class="glass p-10 md:p-16 rounded-[3rem] max-w-4xl text-center mb-16">
+            <h1 class="text-5xl font-black mb-6 uppercase tracking-tighter">Our Elite Reputation</h1>
+            
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <div class="flex star-gold text-2xl">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <span class="font-bold text-lg tracking-widest uppercase">5.0 / 5.0 Rated</span>
             </div>
-            <div class="bg-zinc-900 p-8 rounded-3xl border border-zinc-800 text-center">
-                <h3 class="text-red-600 font-bold text-3xl italic">Premium</h3>
-                <p class="text-zinc-500 uppercase tracking-widest text-xs mt-2">Quality Standards</p>
+
+            <p class="text-zinc-400 leading-relaxed text-lg">
+                Auto Detailing is Multan's premier studio for high-end vehicle preservation. From ceramic coating to Ultra PPF, we use world-class technology to ensure your car stays in showroom condition.
+            </p>
+        </div>
+
+        <div class="w-full max-w-6xl mx-auto pb-24">
+            <h2 class="text-3xl font-black uppercase italic tracking-tighter text-center mb-12">What Our Clients Say</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="glass p-8 rounded-3xl border-t-4 border-red-600">
+                    <div class="star-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-sm italic text-zinc-300 mb-6">"Excellent compound and detailing work. The finish is flawless, and the staff was very professional. Five stars!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center font-black">M</div>
+                        <span class="font-bold uppercase tracking-widest text-xs">M4AZ</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border-t-4 border-red-600">
+                    <div class="star-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-sm italic text-zinc-300 mb-6">"The team did an outstanding job installing PPF on my brand new Hyundai Tucson. Expert attention to detail."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-full flex items-center justify-center font-black">H</div>
+                        <span class="font-bold uppercase tracking-widest text-xs">Hassan Hassan</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border-t-4 border-red-600">
+                    <div class="star-gold mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-sm italic text-zinc-300 mb-6">"Excellent service at a reasonable price. I highly recommend them for any detailing work in Multan."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center font-black">F</div>
+                        <span class="font-bold uppercase tracking-widest text-xs">Fahad Bokhari</span>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <a href="index.html" class="inline-flex items-center gap-2 bg-zinc-800 px-8 py-3 rounded-full font-bold hover:bg-white hover:text-black transition uppercase tracking-widest text-xs">
-            <i class="fas fa-arrow-left"></i> Back to Home
-        </a>
-    </section>
+    </main>
+
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 3000;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for(let i=0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 5;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const material = new THREE.PointsMaterial({ size: 0.005, color: '#ef4444' });
+        const particlesMesh = new THREE.Points(particlesGeometry, material);
+        scene.add(particlesMesh);
+
+        camera.position.z = 2;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            particlesMesh.rotation.y += 0.001;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 </html>
