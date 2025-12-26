@@ -69,20 +69,19 @@
         document.body.appendChild(renderer.domElement);
 
         const particlesGeometry = new THREE.BufferGeometry();
-        const count = 3000;
+        const count = 4000;
         const positions = new Float32Array(count * 3);
         
-        // Randomly scatter particles
         for(let i = 0; i < count * 3; i++) {
             positions[i] = (Math.random() - 0.5) * 10;
         }
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
         const material = new THREE.PointsMaterial({
-            size: 0.015,
+            size: 0.012,
             color: '#ff0000',
             transparent: true,
-            opacity: 0.8,
+            opacity: 0.6,
             blending: THREE.AdditiveBlending
         });
 
@@ -90,14 +89,13 @@
         scene.add(particlesMesh);
         camera.position.z = 3;
 
+        // Variables for smooth interaction
         let mouseX = 0;
         let mouseY = 0;
-        let targetX = 0;
-        let targetY = 0;
-
+        
         document.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            mouseX = (event.clientX / window.innerWidth) - 0.5;
+            mouseY = (event.clientY / window.innerHeight) - 0.5;
         });
 
         const clock = new THREE.Clock();
@@ -105,17 +103,14 @@
         function animate() {
             const elapsedTime = clock.getElapsedTime();
 
-            // Smoothly move particles on their own (Autonomous drift)
-            particlesMesh.rotation.y = elapsedTime * 0.05;
-            particlesMesh.rotation.x = Math.sin(elapsedTime * 0.2) * 0.1;
-
-            // Interactive mouse influence (Floating effect)
-            targetX = mouseX * 0.5;
-            targetY = mouseY * 0.5;
+            // 1. CONSTANT AUTO-ROTATION (Never Stops)
+            // Slow, majestic rotation around the Y axis
+            particlesMesh.rotation.y = elapsedTime * 0.12; 
             
-            // Lerping for butter-smooth movement
-            particlesMesh.position.x += (targetX - particlesMesh.position.x) * 0.05;
-            particlesMesh.position.y += (targetY - particlesMesh.position.y) * 0.05;
+            // 2. MOUSE INFLUENCE (Added on top)
+            // We use the mouse to slightly tilt the rotation, not replace it
+            particlesMesh.rotation.x += (mouseY * 0.5 - particlesMesh.rotation.x) * 0.05;
+            particlesMesh.rotation.z += (mouseX * 0.2 - particlesMesh.rotation.z) * 0.05;
 
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
