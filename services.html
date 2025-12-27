@@ -17,19 +17,22 @@
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             transform: scale(1.1);
         }
+        .review-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 <body class="bg-black text-white font-sans">
 
     <nav class="flex justify-between items-center p-6 bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
         <a href="index.html" class="text-xl md:text-2xl font-black text-red-600 uppercase italic">Auto Detailing</a>
-        
         <div class="hidden md:flex space-x-6 font-bold uppercase text-xs tracking-widest">
             <a href="index.html" class="hover:text-red-500 transition">Home</a>
             <a href="about.html" class="hover:text-red-500 transition">About</a>
             <a href="booking.html" class="hover:text-red-500 transition text-red-600">Booking</a>
         </div>
-
         <div class="flex items-center gap-3">
             <a href="https://www.instagram.com/autodetailingoffiicial?igsh=MTBpbTd2cG42MDFxdw==" target="_blank" class="insta-hover bg-white/10 p-3 rounded-full transition-all flex items-center justify-center shadow-lg border border-white/20">
                 <i class="fab fa-instagram text-2xl text-white"></i>
@@ -48,49 +51,89 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
+                <div class="h-56 overflow-hidden"><img src="https://images.unsplash.com/photo-1507136566006-bb4aef55f239?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-4"><i class="fas fa-shield-halved text-red-600 text-xl"></i><h3 class="text-2xl font-bold uppercase italic">Ultimate PPF</h3></div>
+                    <p class="text-zinc-400 text-sm mb-6">Paint Protection Film is a clear, self-healing barrier against scratches. Essential for Multan's roads.</p>
+                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 transition">Book PPF</a>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
+                <div class="h-56 overflow-hidden"><img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-4"><i class="fas fa-wand-magic-sparkles text-red-600 text-xl"></i><h3 class="text-2xl font-bold uppercase italic">Ceramic Coating</h3></div>
+                    <p class="text-zinc-400 text-sm mb-6">Advanced hydrophobic barrier that repels dust and water while providing a mirror-like shine.</p>
+                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 transition">Book Coating</a>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
+                <div class="h-56 overflow-hidden"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-4"><i class="fas fa-sun text-red-600 text-xl"></i><h3 class="text-2xl font-bold uppercase italic">Window Tint</h3></div>
+                    <p class="text-zinc-400 text-sm mb-6">Ceramic Window Tints block 99% of UV rays, keeping your interior cool in the Multan heat.</p>
+                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 transition">Book Tinting</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-32">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-black uppercase tracking-widest">Client <span class="text-red-600">Reviews</span></h3>
+                <p class="text-zinc-500 text-sm mt-2">What Multan's car enthusiasts say about us</p>
+            </div>
             
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1507136566006-bb4aef55f239?auto=format&fit=crop&q=80&w=800" alt="PPF" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <div class="p-8">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fas fa-shield-halved text-red-600 text-xl"></i>
-                        <h3 class="text-2xl font-bold uppercase italic">Ultimate PPF</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="review-card p-8 rounded-3xl">
+                    <div class="flex text-yellow-500 mb-4 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">Paint Protection Film is a clear, self-healing barrier against scratches and chips. Essential for Multan's roads.</p>
-                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 hover:border-red-600 transition">Book PPF</a>
+                    <p class="text-zinc-300 italic text-sm mb-6">"Got my Land Cruiser ceramic coated here. The shine is unbelievable, even after a dusty drive to Cantt. Highly recommended!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold">A</div>
+                        <div>
+                            <h4 class="text-sm font-bold">Ahmed Khan</h4>
+                            <p class="text-[10px] text-zinc-500 uppercase">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card p-8 rounded-3xl">
+                    <div class="flex text-yellow-500 mb-4 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-zinc-300 italic text-sm mb-6">"The PPF work is clean. You can't even tell the film is there. Professional staff and great environment."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full flex items-center justify-center font-bold">U</div>
+                        <div>
+                            <h4 class="text-sm font-bold">Usman Sheikh</h4>
+                            <p class="text-[10px] text-zinc-500 uppercase">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card p-8 rounded-3xl">
+                    <div class="flex text-yellow-500 mb-4 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-zinc-300 italic text-sm mb-6">"Best window tinting in Multan. The heat reduction is massive. Excellent customer service!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold">M</div>
+                        <div>
+                            <h4 class="text-sm font-bold">M. Ali</h4>
+                            <p class="text-[10px] text-zinc-500 uppercase">Verified Customer</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=800" alt="Ceramic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <div class="p-8">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fas fa-wand-magic-sparkles text-red-600 text-xl"></i>
-                        <h3 class="text-2xl font-bold uppercase italic">Ceramic Coating</h3>
-                    </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">Advanced hydrophobic barrier that repels dust and water while providing a mirror-like shine.</p>
-                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 hover:border-red-600 transition">Book Coating</a>
-                </div>
-            </div>
-
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800" alt="Tint" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <div class="p-8">
-                    <div class="flex items-center gap-3 mb-4">
-                        <i class="fas fa-sun text-red-600 text-xl"></i>
-                        <h3 class="text-2xl font-bold uppercase italic">Window Tint</h3>
-                    </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">Ceramic Window Tints block 99% of UV rays, keeping your interior cool in the Multan heat.</p>
-                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 hover:border-red-600 transition">Book Tinting</a>
-                </div>
-            </div>
-
+        <div class="text-center mt-20">
+            <a href="index.html" class="inline-flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-black hover:bg-red-600 hover:text-white transition-all uppercase tracking-widest text-sm shadow-lg shadow-white/5">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
         </div>
     </section>
 
