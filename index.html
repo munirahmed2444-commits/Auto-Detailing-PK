@@ -7,157 +7,57 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 1. INTRO OVERLAY */
-        #intro-overlay {
-            position: fixed; inset: 0; background: #000; z-index: 10000;
-            display: flex; align-items: center; justify-content: center;
-            transition: opacity 1s ease;
-        }
-        .intro-text {
-            font-size: clamp(2rem, 8vw, 5rem); font-weight: 900; color: #dc2626;
-            text-transform: uppercase; font-style: italic; letter-spacing: 15px;
-            animation: introZoom 3s forwards;
-        }
-        @keyframes introZoom {
-            0% { opacity: 0; transform: scale(0.8); letter-spacing: 30px; }
-            50% { opacity: 1; transform: scale(1); letter-spacing: 15px; }
-            100% { opacity: 0; transform: scale(1.1); letter-spacing: 5px; }
-        }
-
-        /* 2. VIDEO MONTAGE ENGINE */
-        #video-container {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; background: #000; overflow: hidden;
-        }
-        .video-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; filter: brightness(0.4) contrast(1.1);
-            transition: opacity 1s ease-in-out;
-            opacity: 0;
-        }
-        .video-bg.active { opacity: 1; }
-
-        /* FLASH EFFECT ON CLIP CHANGE */
-        .flash-active { animation: videoFlash 0.5s ease-out; }
-        @keyframes videoFlash {
-            0% { filter: brightness(4); }
-            100% { filter: brightness(0.4); }
-        }
-
-        /* 3. SCROLL REVEAL (NANOTEK STYLE) */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        .glass { background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        #intro-overlay { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; align-items: center; justify-content: center; transition: opacity 1s ease; }
+        .intro-text { font-size: clamp(2rem, 8vw, 5rem); font-weight: 900; color: #dc2626; text-transform: uppercase; font-style: italic; letter-spacing: 15px; animation: introZoom 3s forwards; }
+        @keyframes introZoom { 0% { opacity: 0; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.1); } }
         
-        @keyframes pulse-green {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
+        #hero-background { position: fixed; inset: 0; z-index: -1; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2000'); background-size: cover; background-position: center; }
+        .glass { background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
         .whatsapp-btn { animation: pulse-green 2s infinite; }
+        @keyframes pulse-green { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
 
-    <div id="intro-overlay">
-        <div class="intro-text tracking-tighter">AUTO DETAILING</div>
-    </div>
+    <div id="intro-overlay"><div class="intro-text">AUTO DETAILING</div></div>
+    <div id="hero-background"></div>
 
-    <nav class="flex justify-between items-center p-6 bg-transparent fixed w-full z-50">
-        <a href="index.html" class="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Auto Detailing</a>
-        <div class="hidden md:flex space-x-8 font-bold uppercase text-xs tracking-widest">
-            <a href="about.html" class="hover:text-red-500 transition">About</a>
-            <a href="services.html" class="hover:text-red-500 transition">Services</a>
-            <a href="booking.html" class="hover:text-red-500 transition">Booking</a>
+    <nav class="flex justify-between items-center p-6 fixed w-full z-50">
+        <a href="./index.html" class="text-2xl font-black text-red-600 uppercase italic">Auto Detailing</a>
+        <div class="hidden md:flex space-x-8 font-bold uppercase text-[10px] tracking-widest">
+            <a href="./about.html" class="hover:text-red-500 transition">About</a>
+            <a href="./services.html" class="hover:text-red-500 transition">Services</a>
+            <a href="./booking.html" class="hover:text-red-500 transition">Booking</a>
         </div>
-        <div class="flex items-center gap-3">
-            <a href="https://wa.me/923017442222" class="whatsapp-btn bg-green-600 p-3 rounded-full flex items-center justify-center">
-                <i class="fab fa-whatsapp text-2xl text-white"></i>
-            </a>
-        </div>
+        <a href="https://wa.me/923017442222" target="_blank" class="whatsapp-btn bg-green-600 p-3 rounded-full"><i class="fab fa-whatsapp text-2xl text-white"></i></a>
     </nav>
 
-    <main class="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
-        <div id="video-container">
-            <video id="vid1" class="video-bg active" autoplay muted playsinline><source src="6158066-hd_1920_1080_30fps.mp4" type="video/mp4"></video>
-            <video id="vid2" class="video-bg" muted playsinline><source src="6873324-uhd_3840_2160_25fps.mp4" type="video/mp4"></video>
-            <video id="vid3" class="video-bg" muted playsinline><source src="6159202-hd_1920_1080_30fps.mp4" type="video/mp4"></video>
-            <video id="vid4" class="video-bg" muted playsinline><source src="6159287-hd_1920_1080_30fps.mp4" type="video/mp4"></video>
-        </div>
-
-        <div class="reveal glass p-10 md:p-20 rounded-[3rem] max-w-4xl z-10">
-            <h2 class="text-red-600 font-black uppercase tracking-[0.3em] text-sm mb-4 italic">Nanotek Authorized Installer</h2>
-            <h1 class="text-6xl md:text-8xl font-black mb-6 uppercase tracking-tighter leading-none italic">
-                AUTO <span class="text-zinc-300">DETAILING</span> <br> <span class="text-zinc-500">PROTECTION</span>
+    <main class="relative h-screen flex flex-col items-center justify-center text-center px-4">
+        <div class="reveal glass p-10 md:p-16 rounded-[3rem] max-w-4xl z-10">
+            <h2 class="text-red-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4 italic">Nanotek Authorized Installer</h2>
+            <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase italic tracking-tighter leading-none">
+                AUTO DETAILING <br> <span class="text-zinc-400">& PPF</span>
             </h1>
-            <p class="text-zinc-400 mb-10 max-w-lg mx-auto leading-relaxed italic">
-                Multan's premier studio for Nanotek Ceramic Coating and Ultimate PPF. We don't just wash cars; we preserve masterpieces.
-            </p>
+            <p class="text-[10px] uppercase tracking-[0.4em] text-red-600 font-bold mb-8">Precision in Every Detail. Excellence in Every Coat.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="services.html" class="bg-red-600 text-white px-10 py-4 rounded-full font-black hover:bg-white hover:text-black transition-all uppercase text-sm tracking-widest">Explore Services</a>
-                <a href="booking.html" class="border border-white px-10 py-4 rounded-full font-black hover:bg-white hover:text-black transition-all uppercase text-sm tracking-widest">Book Now</a>
+                <a href="./services.html" class="bg-red-600 text-white px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest">Explore Services</a>
+                <a href="./booking.html" class="border border-white px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest">Book Now</a>
             </div>
         </div>
     </main>
 
-    <section class="py-32 bg-black relative z-10">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                <div>
-                    <h2 class="text-5xl font-black uppercase italic mb-6 leading-tight">Extreme <br><span class="text-red-600">Nanotek</span> Coating</h2>
-                    <p class="text-zinc-500 text-lg mb-8 italic">Unmatched TPU technology for Multan's most elite vehicles. Experience protection that heals itself.</p>
-                </div>
-                <div class="rounded-[2.5rem] overflow-hidden border border-zinc-800 shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1603584173870-7f3ca9ef96a0?q=80&w=1000" class="w-full grayscale hover:grayscale-0 transition duration-700">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <script>
-        // 1. CONTINUOUS VIDEO EDIT LOGIC
-        const videos = document.querySelectorAll('.video-bg');
-        let currentIdx = 0;
-
-        function playNextClip() {
-            const currentVid = videos[currentIdx];
-            currentIdx = (currentIdx + 1) % videos.length;
-            const nextVid = videos[currentIdx];
-
-            // Trigger Flash Transition
-            document.getElementById('video-container').classList.add('flash-active');
-            
-            setTimeout(() => {
-                currentVid.classList.remove('active');
-                currentVid.pause();
-                
-                nextVid.classList.add('active');
-                nextVid.play();
-                
-                setTimeout(() => {
-                    document.getElementById('video-container').classList.remove('flash-active');
-                }, 300);
-            }, 400); // Wait for flash to reach peak brightness
-        }
-
-        // Switches clip every 4.5 seconds
-        setInterval(playNextClip, 4500);
-
-        // 2. INTRO REMOVAL
         window.addEventListener('load', () => {
             setTimeout(() => {
-                const intro = document.getElementById('intro-overlay');
-                intro.style.opacity = '0';
-                setTimeout(() => intro.style.display = 'none', 1000);
+                document.getElementById('intro-overlay').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('intro-overlay').style.display = 'none';
+                    document.querySelector('.reveal').classList.add('active');
+                }, 1000);
             }, 2500);
         });
-
-        // 3. SCROLL REVEAL
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
