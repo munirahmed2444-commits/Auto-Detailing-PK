@@ -13,22 +13,13 @@
         
         /* 1. INTRO OVERLAY */
         #intro-overlay {
-            position: fixed;
-            inset: 0;
-            background: #000;
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: fixed; inset: 0; background: #000; z-index: 10000;
+            display: flex; align-items: center; justify-content: center;
             transition: opacity 1s ease;
         }
         .intro-text {
-            font-size: clamp(2rem, 8vw, 5rem);
-            font-weight: 900;
-            color: #dc2626;
-            text-transform: uppercase;
-            font-style: italic;
-            letter-spacing: 15px;
+            font-size: clamp(2rem, 8vw, 5rem); font-weight: 900; color: #dc2626;
+            text-transform: uppercase; font-style: italic; letter-spacing: 15px;
             animation: introZoom 3s forwards;
         }
         @keyframes introZoom {
@@ -37,79 +28,73 @@
             100% { opacity: 0; transform: scale(1.1); letter-spacing: 5px; }
         }
 
-        /* 2. VIDEO BACKGROUND */
+        /* 2. VIDEO MONTAGE STYLING */
+        #video-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; background: #000; overflow: hidden;
+        }
         .video-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            filter: brightness(0.3);
-        }
-
-        /* 3. SCROLL REVEAL (NANOTEK STYLE) */
-        .reveal {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; filter: brightness(0.4) contrast(1.2);
+            transition: opacity 0.8s ease-in-out;
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1);
         }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .video-bg.active { opacity: 1; }
+
+        /* FLASH EFFECT ON TRANSITION */
+        .flash-active { animation: videoFlash 0.6s ease-out; }
+        @keyframes videoFlash {
+            0% { filter: brightness(3) white-space: ; }
+            100% { filter: brightness(0.4); }
         }
 
+        /* 3. SCROLL REVEAL */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .whatsapp-btn { animation: pulse-green 2s infinite; }
         @keyframes pulse-green {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
-        .whatsapp-btn { animation: pulse-green 2s infinite; }
-        .insta-hover:hover {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            transform: scale(1.1);
         }
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
 
     <div id="intro-overlay">
-        <div class="intro-text">AUTO DETAILING</div>
+        <div class="intro-text tracking-tighter">AUTO DETAILING</div>
     </div>
 
     <nav class="flex justify-between items-center p-6 bg-transparent fixed w-full z-50">
         <a href="index.html" class="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Auto Detailing</a>
-        
         <div class="hidden md:flex space-x-8 font-bold uppercase text-xs tracking-widest">
             <a href="about.html" class="hover:text-red-500 transition">About</a>
             <a href="services.html" class="hover:text-red-500 transition">Services</a>
             <a href="booking.html" class="hover:text-red-500 transition">Booking</a>
         </div>
-
         <div class="flex items-center gap-3">
-            <a href="https://www.instagram.com/autodetailingoffiicial?igsh=MTBpbTd2cG42MDFxdw==" target="_blank" class="insta-hover bg-white/10 p-3 rounded-full transition-all flex items-center justify-center shadow-lg border border-white/20">
-                <i class="fab fa-instagram text-2xl text-white"></i>
-            </a>
-            <a href="https://wa.me/923017442222" class="whatsapp-btn bg-green-600 p-3 rounded-full hover:bg-green-500 transition-all flex items-center justify-center shadow-lg">
+            <a href="https://wa.me/923017442222" class="whatsapp-btn bg-green-600 p-3 rounded-full flex items-center justify-center shadow-lg">
                 <i class="fab fa-whatsapp text-2xl text-white"></i>
             </a>
         </div>
     </nav>
 
     <main class="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
-        <video autoplay muted loop playsinline class="video-bg">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-car-polishing-and-waxing-process-28045-large.mp4" type="video/mp4">
-        </video>
+        <div id="video-container">
+            <video id="vid1" class="video-bg active" autoplay muted playsinline><source src="vid1.mp4" type="video/mp4"></video>
+            <video id="vid2" class="video-bg" muted playsinline><source src="vid2.mp4" type="video/mp4"></video>
+            <video id="vid3" class="video-bg" muted playsinline><source src="vid3.mp4" type="video/mp4"></video>
+            <video id="vid4" class="video-bg" muted playsinline><source src="vid4.mp4" type="video/mp4"></video>
+        </div>
 
         <div class="reveal glass p-10 md:p-20 rounded-[3rem] max-w-4xl z-10">
             <h2 class="text-red-600 font-black uppercase tracking-[0.3em] text-sm mb-4 italic">Nanotek Authorized Installer</h2>
             <h1 class="text-6xl md:text-8xl font-black mb-6 uppercase tracking-tighter leading-none italic">
                 AUTO <span class="text-zinc-300">DETAILING</span> <br> <span class="text-zinc-500">PROTECTION</span>
             </h1>
-            <p class="text-zinc-400 mb-10 max-w-lg mx-auto leading-relaxed italic">
-                Multan's premier studio for Nanotek Ceramic Coating and Ultimate PPF. We don't just wash cars; we preserve masterpieces.
-            </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="services.html" class="bg-red-600 text-white px-10 py-4 rounded-full font-black hover:bg-red-700 transition-all uppercase text-sm tracking-widest">Explore Services</a>
+                <a href="services.html" class="bg-red-600 text-white px-10 py-4 rounded-full font-black hover:bg-white hover:text-black transition-all uppercase text-sm tracking-widest">Explore Services</a>
                 <a href="booking.html" class="border border-white px-10 py-4 rounded-full font-black hover:bg-white hover:text-black transition-all uppercase text-sm tracking-widest">Book Now</a>
             </div>
         </div>
@@ -119,38 +104,59 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                 <div>
-                    <h2 class="text-5xl font-black uppercase italic italic mb-6 leading-tight">Extreme <br><span class="text-red-600">Nanotek</span> Coating</h2>
-                    <p class="text-zinc-500 text-lg mb-8">We use the world's most advanced TPU resin technology to ensure your car looks showroom-new for years.</p>
-                    <a href="services.html" class="text-red-600 font-bold uppercase tracking-widest border-b-2 border-red-600 pb-2">Discover Nanotek</a>
+                    <h2 class="text-5xl font-black uppercase italic mb-6 leading-tight">Extreme <br><span class="text-red-600">Nanotek</span> Coating</h2>
+                    <p class="text-zinc-500 text-lg mb-8 italic">Unmatched TPU technology for Multan's most elite vehicles.</p>
                 </div>
                 <div class="rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1603584173870-7f3ca9ef96a0?q=80&w=1000" alt="Car Detail" class="w-full grayscale hover:grayscale-0 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1603584173870-7f3ca9ef96a0?q=80&w=1000" class="w-full grayscale hover:grayscale-0 transition duration-700">
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // 1. INTRO HANDLING
+        // 1. VIDEO PLAYLIST LOGIC (NANOTEK STYLE)
+        const videos = document.querySelectorAll('.video-bg');
+        let currentVideoIndex = 0;
+
+        function switchVideo() {
+            const currentVideo = videos[currentVideoIndex];
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            const nextVideo = videos[currentVideoIndex];
+
+            // Trigger Flash and Switch
+            document.getElementById('video-container').classList.add('flash-active');
+            
+            setTimeout(() => {
+                currentVideo.classList.remove('active');
+                currentVideo.pause();
+                
+                nextVideo.classList.add('active');
+                nextVideo.play();
+                
+                setTimeout(() => {
+                    document.getElementById('video-container').classList.remove('flash-active');
+                }, 300);
+            }, 300);
+        }
+
+        // Change video every 4 seconds for a fast-paced edit feel
+        setInterval(switchVideo, 4000);
+
+        // 2. INTRO & REVEAL
         window.addEventListener('load', () => {
             setTimeout(() => {
-                const intro = document.getElementById('intro-overlay');
-                intro.style.opacity = '0';
-                setTimeout(() => intro.style.display = 'none', 1000);
+                document.getElementById('intro-overlay').style.opacity = '0';
+                setTimeout(() => document.getElementById('intro-overlay').style.display = 'none', 1000);
             }, 2500);
         });
 
-        // 2. SCROLL REVEAL LOGIC
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // 3. THREE.JS PARTICLES
+        // 3. THREE.JS PARTICLES (Remains in background)
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -158,48 +164,20 @@
         document.body.appendChild(renderer.domElement);
 
         const particlesGeometry = new THREE.BufferGeometry();
-        const count = 4000;
-        const positions = new Float32Array(count * 3);
-        for(let i = 0; i < count * 3; i++) {
-            positions[i] = (Math.random() - 0.5) * 10;
-        }
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-        const material = new THREE.PointsMaterial({
-            size: 0.012,
-            color: '#ff0000',
-            transparent: true,
-            opacity: 0.4,
-            blending: THREE.AdditiveBlending
-        });
-
+        const posArray = new Float32Array(4000 * 3);
+        for(let i=0; i<4000*3; i++) posArray[i] = (Math.random() - 0.5) * 10;
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const material = new THREE.PointsMaterial({ size: 0.012, color: '#ff0000', transparent: true, opacity: 0.4 });
         const particlesMesh = new THREE.Points(particlesGeometry, material);
         scene.add(particlesMesh);
         camera.position.z = 3;
 
-        let mouseX = 0;
-        let mouseY = 0;
-        document.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX / window.innerWidth) - 0.5;
-            mouseY = (event.clientY / window.innerHeight) - 0.5;
-        });
-
-        const clock = new THREE.Clock();
         function animate() {
-            const elapsedTime = clock.getElapsedTime();
-            particlesMesh.rotation.y = elapsedTime * 0.12; 
-            particlesMesh.rotation.x += (mouseY * 0.5 - particlesMesh.rotation.x) * 0.05;
-            particlesMesh.rotation.z += (mouseX * 0.2 - particlesMesh.rotation.z) * 0.05;
+            particlesMesh.rotation.y += 0.002;
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
         }
         animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
     </script>
 </body>
 </html>
