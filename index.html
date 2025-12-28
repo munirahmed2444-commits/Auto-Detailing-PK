@@ -41,8 +41,8 @@
     </nav>
 
     <div class="content-container">
-        <section class="min-h-screen flex items-center justify-center px-4">
-            <div class="glass p-10 md:p-16 rounded-[3rem] max-w-4xl text-center">
+        <section class="min-h-screen flex items-center justify-center px-4 text-center">
+            <div class="glass p-10 md:p-16 rounded-[3rem] max-w-4xl">
                 <h2 class="text-red-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4 italic">Nanotek Authorized Installer</h2>
                 <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase italic tracking-tighter leading-none">AUTO DETAILING <br> <span class="text-zinc-400">& PPF</span></h1>
                 <p class="text-[10px] uppercase tracking-[0.4em] text-red-600 font-bold mb-8">Precision in Every Detail. Excellence in Every Coat.</p>
@@ -57,16 +57,16 @@
             <div class="glass w-full max-w-6xl rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
                 <div class="w-full md:w-2/3 h-[500px] bg-zinc-800">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13803.951556385108!2d71.4938709!3d30.2458706!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3508b117f831%3A0xbd6663497762c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2spk!4v1715600000000!5m2!1sen!2spk" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.284764426543!2d71.4920409!3d30.2289657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3508b117f831%3A0xbd66635977a2c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2spk!4v1715800000000!5m2!1sen!2spk" 
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
                 <div class="w-full md:w-1/3 p-10 bg-zinc-900/90 flex flex-col justify-center">
-                    <div id="status-badge" class="mb-6 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest w-fit border border-zinc-700">Checking...</div>
+                    <div id="status-badge" class="mb-6 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest w-fit border border-zinc-700">● Live Status</div>
                     <h3 class="text-3xl font-black italic uppercase mb-2">Visit Our Studio</h3>
-                    <p class="text-zinc-400 text-sm mb-8 leading-relaxed">Northern Bypass, Model Town, Multan.<br>Authorized Nanotek Center.</p>
+                    <p class="text-zinc-400 text-sm mb-8 leading-relaxed">Northern Bypass, Model Town, Multan.<br>The Official Nanotek Studio.</p>
                     <div class="space-y-4">
-                        <a href="https://maps.app.goo.gl/3XmXvV9T6Xz9X7X9" target="_blank" class="block w-full bg-red-600 text-white text-center py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition">Open in Google Maps</a>
+                        <a href="https://www.google.com/maps/contrib/116091583101739410382/reviews" target="_blank" class="block w-full bg-red-600 text-white text-center py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition">Open in Google Maps</a>
                         <a href="tel:+923017442222" class="block w-full border border-white/20 text-center py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-white/10 transition">Call Studio</a>
                     </div>
                 </div>
@@ -79,18 +79,16 @@
     <script>
         function updateStatus() {
             const now = new Date();
-            const day = now.getDay(); // 5 is Friday
+            const day = now.getDay(); 
             const hour = now.getHours();
             const badge = document.getElementById('status-badge');
-            
-            // Monday - Sunday (Closed Friday) 9:00 AM - 8:00 PM
-            let isOpen = (day !== 5 && hour >= 9 && hour < 20);
-            
+            // Logic: Open Sat-Thu 11AM-9PM | Closed Friday
+            let isOpen = (day !== 5 && hour >= 11 && hour < 21);
             if (isOpen) {
                 badge.innerText = "● Open Now";
                 badge.style.color = "#22c55e"; badge.style.borderColor = "#22c55e"; badge.style.background = "rgba(34, 197, 94, 0.1)";
             } else {
-                badge.innerText = "● Currently Closed";
+                badge.innerText = "● Closed Now";
                 badge.style.color = "#ef4444"; badge.style.borderColor = "#ef4444"; badge.style.background = "rgba(239, 68, 68, 0.1)";
             }
         }
