@@ -9,65 +9,81 @@
     <style>
         @keyframes pulse-green { 0% { transform: scale(0.95); } 70% { transform: scale(1); } 100% { transform: scale(0.95); } }
         .whatsapp-btn { animation: pulse-green 2s infinite; }
-        .nav-social:hover { background: #dc2626; transform: scale(1.1); }
-        .review-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .review-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; }
+        .review-card:hover { border-color: #dc2626; transform: translateY(-5px); }
     </style>
 </head>
 <body class="bg-black text-white font-sans">
+
     <nav class="flex justify-between items-center p-6 bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
         <a href="index.html" class="text-xl md:text-2xl font-black text-red-600 uppercase italic">Auto Detailing</a>
         <div class="hidden md:flex space-x-6 font-bold uppercase text-xs tracking-widest">
             <a href="index.html" class="hover:text-red-500 transition">Home</a>
             <a href="about.html" class="hover:text-red-500 transition">About</a>
-            <a href="booking.html" class="hover:text-red-500 transition">Booking</a>
-            <a href="contact.html" class="text-red-600 underline">Contact</a>
+            <a href="services.html" class="text-red-600">Services</a>
+            <a href="contact.html" class="hover:text-red-500 transition">Contact</a>
         </div>
-        <div class="flex items-center gap-2">
-            <a href="https://www.facebook.com/autodetailing.com.pk" target="_blank" class="nav-social bg-white/10 p-2 rounded-full transition-all"><i class="fab fa-facebook-f text-sm"></i></a>
-            <a href="https://www.instagram.com/autodetailingoffiicial" target="_blank" class="nav-social bg-white/10 p-2 rounded-full transition-all"><i class="fab fa-instagram text-sm"></i></a>
-            <a href="https://wa.me/923017442222" class="whatsapp-btn bg-green-600 p-2 rounded-full flex items-center justify-center"><i class="fab fa-whatsapp text-sm"></i></a>
+        <div class="flex items-center gap-3">
+            <a href="https://wa.me/923017442222" class="whatsapp-btn bg-green-600 p-3 rounded-full flex items-center justify-center shadow-lg">
+                <i class="fab fa-whatsapp text-xl text-white"></i>
+            </a>
         </div>
     </nav>
 
     <section class="py-20 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-black uppercase mb-4 tracking-widest">Premium <span class="text-red-600">Services</span></h2>
-            <p class="text-zinc-500 italic">Unmatched quality of services to protect your vehicle's factory finish.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
-                <div class="h-56 overflow-hidden"><img src="https://images.unsplash.com/photo-1507136566006-bb4aef55f239?w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold uppercase italic mb-4">Ultimate PPF</h3>
-                    <p class="text-zinc-400 text-sm mb-6">Self-healing barrier against scratches. Essential for Multan's roads.</p>
-                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 transition">Book PPF</a>
+        <div class="mt-32">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-black uppercase tracking-widest">Client <span class="text-red-600">Reviews</span></h3>
+                <p class="text-zinc-500 text-sm mt-2">What Multan's car enthusiasts say about us</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="review-card p-8 rounded-3xl">
+                    <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 italic text-sm mb-6">"Got my Land Cruiser ceramic coated here. The shine is unbelievable, even after a dusty drive to Cantt. Highly recommended!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold">A</div>
+                        <div><h4 class="text-sm font-bold">Ahmed Khan</h4><p class="text-[10px] text-zinc-500 uppercase">Verified Customer</p></div>
+                    </div>
+                </div>
+                <div class="review-card p-8 rounded-3xl">
+                    <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 italic text-sm mb-6">"The PPF work is clean. You can't even tell the film is there. Professional staff and great environment."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full flex items-center justify-center font-bold">U</div>
+                        <div><h4 class="text-sm font-bold">Usman Sheikh</h4><p class="text-[10px] text-zinc-500 uppercase">Verified Customer</p></div>
+                    </div>
+                </div>
+                <div class="review-card p-8 rounded-3xl">
+                    <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 italic text-sm mb-6">"Best window tinting in Multan. The heat reduction is massive. Excellent customer service!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold">M</div>
+                        <div><h4 class="text-sm font-bold">M. Ali</h4><p class="text-[10px] text-zinc-500 uppercase">Verified Customer</p></div>
+                    </div>
+                </div>
+                <div class="review-card p-8 rounded-3xl">
+                    <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 italic text-sm mb-6">"The interior cleaning made my old car feel brand new. Unbelievable results!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full flex items-center justify-center font-bold">Z</div>
+                        <div><h4 class="text-sm font-bold">Zain Ahmed</h4><p class="text-[10px] text-zinc-500 uppercase">Verified Customer</p></div>
+                    </div>
+                </div>
+                <div class="review-card p-8 rounded-3xl">
+                    <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 italic text-sm mb-6">"Fastest and most professional detailing studio I've visited. Worth every rupee."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold">U</div>
+                        <div><h4 class="text-sm font-bold">Umar Farooq</h4><p class="text-[10px] text-zinc-500 uppercase">Verified Customer</p></div>
+                    </div>
                 </div>
             </div>
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
-                <div class="h-56 overflow-hidden"><img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold uppercase italic mb-4">Ceramic Coating</h3>
-                    <p class="text-zinc-400 text-sm mb-6">Repels dust and water while providing a mirror-like shine.</p>
-                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 transition">Book Coating</a>
-                </div>
-            </div>
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-red-600 transition-all duration-300 group">
-                <div class="h-56 overflow-hidden"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold uppercase italic mb-4">Window Tint</h3>
-                    <p class="text-zinc-400 text-sm mb-6">Blocks 99% of UV rays, keeping your interior cool.</p>
-                    <a href="booking.html" class="block text-center border border-zinc-700 py-3 rounded-xl text-xs font-bold uppercase hover:bg-red-600 transition">Book Tinting</a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-20">
-            <a href="contact.html" class="inline-flex items-center gap-3 bg-red-600 text-white px-10 py-4 rounded-full font-black hover:bg-white hover:text-black transition-all uppercase tracking-widest text-sm">
-                Get a Custom Quote <i class="fas fa-arrow-right"></i>
-            </a>
         </div>
     </section>
-
-    <footer class="py-10 text-center border-t border-zinc-900"><p class="text-zinc-600 text-xs uppercase tracking-widest">© 2025 Auto Detailing & PPF Specialist Multan</p></footer>
 </body>
 </html>
