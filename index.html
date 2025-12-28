@@ -30,7 +30,6 @@
 <body class="bg-black text-white">
 
     <div id="intro-overlay"><div class="intro-text">AUTO DETAILING</div></div>
-    
     <div class="hero-bg"></div>
 
     <nav class="flex justify-between items-center p-6 fixed w-full z-50">
@@ -52,35 +51,78 @@
         </div>
     </nav>
 
-    <main class="h-screen flex flex-col items-center justify-center text-center px-4">
-        <div class="reveal glass p-10 md:p-16 rounded-[3rem] max-w-4xl">
+    <main class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 pb-10">
+        <div class="reveal glass p-10 md:p-16 rounded-[3rem] max-w-4xl mb-20">
             <h2 class="text-red-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4 italic">Nanotek Authorized Installer</h2>
             <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase italic tracking-tighter leading-none">
                 AUTO DETAILING <br> <span class="text-zinc-400">& PPF</span>
             </h1>
-            
             <p class="text-[10px] uppercase tracking-[0.4em] text-red-600 font-bold mb-8">
                 Precision in Every Detail. Excellence in Every Coat.
             </p>
-
-            <p class="text-zinc-400 mb-10 max-w-lg mx-auto leading-relaxed italic text-sm">
-                Multan's premier studio for Nanotek Ceramic Coating and Paint Protection Film. Engineered for perfection.
-            </p>
-            
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="services.html" class="bg-red-600 text-white px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition">Explore Services</a>
                 <a href="booking.html" class="border border-white px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition">Book Now</a>
             </div>
         </div>
+
+        <div class="w-full max-w-5xl px-4 reveal">
+            <div class="glass rounded-[2rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
+                <div class="w-full md:w-2/3 h-[400px]">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.463630245037!2d71.49129597566085!3d30.245870574823296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3508b117f831%3A0xbd66634777e2c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2spk!4v1709295555555!5m2!1sen!2spk" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <div class="w-full md:w-1/3 p-10 flex flex-col justify-center text-left bg-zinc-900/50">
+                    <div id="status-badge" class="inline-block px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 w-fit">
+                        Loading Status...
+                    </div>
+                    <h3 class="text-2xl font-black italic uppercase mb-2">Find Our Studio</h3>
+                    <p class="text-zinc-400 text-sm mb-6 leading-relaxed">
+                        Northern Bypass, Model Town, Multan, 66000
+                    </p>
+                    <div class="flex flex-col gap-3">
+                        <a href="https://maps.app.goo.gl/9iA7BmsS9v8C7XyA8" target="_blank" class="bg-white text-black text-center py-3 rounded-xl font-bold uppercase text-[10px] tracking-widest hover:bg-red-600 hover:text-white transition">Get Directions</a>
+                        <a href="tel:+923017442222" class="border border-white/20 text-center py-3 rounded-xl font-bold uppercase text-[10px] tracking-widest hover:bg-white/10 transition">Call Studio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script>
+        // Automatic Open/Closed Logic
+        function updateStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0: Sun, 1: Mon, ..., 5: Fri, 6: Sat
+            const hour = now.getHours();
+            const badge = document.getElementById('status-badge');
+            
+            // Logic: Friday Closed, Sat-Sun & Mon-Thu 9 AM - 8 PM
+            let isOpen = false;
+            if (day !== 5) { // If not Friday
+                if (hour >= 9 && hour < 20) {
+                    isOpen = true;
+                }
+            }
+
+            if (isOpen) {
+                badge.innerText = "● Open Now";
+                badge.classList.add('bg-green-600/20', 'text-green-500', 'border', 'border-green-500/50');
+            } else {
+                badge.innerText = "● Currently Closed";
+                badge.classList.add('bg-red-600/20', 'text-red-500', 'border', 'border-red-500/50');
+            }
+        }
+
         window.addEventListener('load', () => {
+            updateStatus();
             setTimeout(() => {
                 document.getElementById('intro-overlay').style.opacity = '0';
                 setTimeout(() => {
                     document.getElementById('intro-overlay').style.display = 'none';
-                    document.querySelector('.reveal').classList.add('active');
+                    document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
                 }, 1000);
             }, 2500);
         });
