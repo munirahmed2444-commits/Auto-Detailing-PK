@@ -85,7 +85,12 @@
             <a href="contact.html" class="hover:text-red-500 transition">Contact</a>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-4">
+            <div class="hidden sm:flex items-center gap-4 mr-2 text-white/60 text-sm">
+                <a href="https://www.facebook.com/autodetailingmultan" target="_blank" class="hover:text-blue-500 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/autodetailingmultan" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@autodetailingmultan" target="_blank" class="hover:text-zinc-300 transition"><i class="fab fa-tiktok"></i></a>
+            </div>
             <a href="https://wa.me/923017442222" target="_blank" class="whatsapp-btn bg-green-600 w-10 h-10 rounded-full flex items-center justify-center text-white">
                 <i class="fab fa-whatsapp text-xl"></i>
             </a>
@@ -108,7 +113,7 @@
         <section class="py-20 px-4">
             <div class="glass w-full max-w-6xl mx-auto rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-2xl border-white/5">
                 <div class="w-full md:w-2/3 h-[450px]">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.3323055157!2d71.4913217!3d30.1983083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b33df1964200b%3A0x6a378201a708309!2sAuto%20Detailing%20Multan!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.854659556209!2d71.49390231512066!3d30.212724981816086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDEyJzQ1LjgiTiA3McKwMjknNDUuOCJF!5e0!3m2!1sen!2s!4v1625562556255!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 <div class="w-full md:w-1/3 p-12 bg-zinc-950/80 flex flex-col justify-center">
                     <div id="status-badge" class="mb-6 px-4 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.2em] w-fit border border-zinc-800">Checking Studio...</div>
@@ -129,7 +134,7 @@
             const now = new Date();
             const day = now.getDay(); const hour = now.getHours();
             const badge = document.getElementById('status-badge');
-            let isOpen = (day !== 5 && hour >= 9 && hour < 20); // Closed Fridays
+            let isOpen = (day !== 5 && hour >= 9 && hour < 20);
             if (isOpen) {
                 badge.innerText = "● Studio Open Now"; badge.style.color = "#22c55e"; badge.style.borderColor = "#22c55e";
             } else {
