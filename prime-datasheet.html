@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Datasheet | Nanotek Prime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #050505; color: #fff; font-family: sans-serif; padding: 40px 20px; }
+        .sheet-container { max-width: 800px; margin: 0 auto; border: 1px solid #333; background: #000; padding: 40px; position: relative; }
+        .red-accent { color: #dc2626; font-weight: 900; }
+        .data-row { display: flex; justify-content: space-between; border-bottom: 1px solid #1a1a1a; padding: 12px 0; font-size: 13px; }
+        .data-label { text-transform: uppercase; color: #666; font-weight: bold; letter-spacing: 1px; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #dc2626; }
+    </style>
+</head>
+<body>
+    <div class="sheet-container">
+        <a href="nanotek-prime.html" class="back-btn">← Back to Product</a>
+        <h1 class="text-3xl font-black italic uppercase mb-2">NANOTEK <span class="red-accent">PRIME</span></h1>
+        <p class="text-xs text-zinc-500 uppercase tracking-widest mb-10 border-b border-zinc-800 pb-4">Technical Specifications & Performance Data</p>
+
+        <div class="space-y-1">
+            <div class="data-row"><span class="data-label">Material</span><span>High Grade Aliphatic TPU</span></div>
+            <div class="data-row"><span class="data-label">Total Thickness</span><span>185 Microns (±5%)</span></div>
+            <div class="data-row"><span class="data-label">Gloss Level</span><span>> 95 Gloss Units</span></div>
+            <div class="data-row"><span class="data-label">Self-Healing Tech</span><span>Instant (Heat Activated)</span></div>
+            <div class="data-row"><span class="data-label">Elongation at Break</span><span>> 350%</span></div>
+            <div class="data-row"><span class="data-label">Yellowing Resistance</span><span>UV Stable (Delta E < 1.0)</span></div>
+            <div class="data-row"><span class="data-label">Adhesive Type</span><span>Repositionable Acrylic</span></div>
+        </div>
+
+        <div class="mt-12 p-6 bg-zinc-900/50 rounded-lg">
+            <h4 class="text-xs font-black uppercase text-red-600 mb-2">Installation Warning</h4>
+            <p class="text-[11px] text-zinc-400 leading-relaxed">This product should only be installed by Authorized Nanotek Studios. Improper application may affect performance and warranty coverage.</p>
+        </div>
+
+        <div class="mt-10 flex justify-between items-center">
+            <button onclick="window.print()" class="bg-white text-black text-[10px] font-black px-6 py-3 rounded-full uppercase">Print Document</button>
+            <p class="text-[9px] text-zinc-700 font-bold uppercase tracking-tighter">© 2025 Nanotek Technology Studio</p>
+        </div>
+    </div>
+</body>
+</html>
