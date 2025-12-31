@@ -24,10 +24,57 @@
         .back-home { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; opacity: 0.6; transition: 0.3s; }
         .back-home:hover { opacity: 1; color: #dc2626; }
         .hero-container { height: 100vh; display: flex; align-items: center; padding-left: 120px; background: radial-gradient(circle at 80%, #111 0%, #000 100%); }
-        .product-img { position: absolute; right: -5%; top: 50%; transform: translateY(-50%); width: 60%; z-index: 1; filter: drop-shadow(0 0 50px rgba(220, 38, 38, 0.2)); }
+        .product-img { position: absolute; right: -5%; top: 50%; transform: translateY(-50%); width: 60%; z-index: 1; filter: drop-shadow(0 0 50px rgba(220, 38, 38, 0.2)); } 
+        /* DROPDOWN & SIDE MENU STYLING */
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(10, 10, 10, 0.98);
+    min-width: 240px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.8);
+    z-index: 60;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+}
+.dropdown-content a {
+    color: #ccc;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-left: 3px solid transparent;
+}
+.dropdown-content a:hover { 
+    background: rgba(220, 38, 38, 0.1); 
+    color: #fff; 
+    border-left: 3px solid #dc2626; 
+    padding-left: 25px;
+}
+.dropdown:hover .dropdown-content { display: block; }
+
+/* Side Menu Hover Effects */
+.side-link { transition: all 0.3s ease; color: #71717a; }
+.side-link:hover { color: #dc2626; transform: translateX(-5px); }
     </style>
 </head>
 <body>
+    <div class="fixed right-10 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-4 border-r-2 border-red-600 pr-6 text-right">
+    <p class="text-[9px] font-black text-zinc-500 uppercase tracking-[0.3em] mb-2">Switch Product</p>
+    <a href="nanotek-prime.html" class="side-link text-[10px] font-bold uppercase tracking-widest">Prime</a>
+    <a href="nanotek-ultimate-pro.html" class="side-link text-[10px] font-bold uppercase tracking-widest">Ultimate Pro</a>
+    <a href="nanotek-prime-plus.html" class="side-link text-[10px] font-bold uppercase tracking-widest">Prime Plus</a>
+    <a href="nanotek-satin.html" class="side-link text-[10px] font-bold uppercase tracking-widest">Satin</a>
+    <a href="gloss-black.html" class="side-link text-[10px] font-bold uppercase tracking-widest">Gloss Black</a>
+    <a href="matte-black.html" class="side-link text-[10px] font-bold uppercase tracking-widest">Matte Black</a>
+    <a href="diamond-white.html" class="side-link text-[10px] font-bold uppercase tracking-widest">Diamond White</a>
+</div>
     <div class="sidebar-text uppercase italic">PAINT PROTECTION <span class="highlight-red">FILM</span></div>
     <nav class="flex justify-between items-center p-8 fixed top-0 w-full z-50">
         <a href="index.html" class="text-2xl font-black text-red-600 uppercase italic">Auto Detailing</a>
