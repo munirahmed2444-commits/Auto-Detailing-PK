@@ -3,7 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Detailing | Nanotek Experience</title>
+    
+    <title>Auto Detailing PK | Authorized Nanotek Studio Multan | Elite PPF</title>
+    <meta name="description" content="Auto Detailing PK is Multan's premier authorized Nanotek studio. Specialized in Elite PPF, Ceramic Coating, and Diamond White protection. Visit us at Northern Bypass, Multan.">
+    <meta name="keywords" content="Auto Detailing Multan, Nanotek Multan, PPF Pakistan, Ceramic Coating Multan, Car Detailing Pakistan">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoDetailing",
+      "name": "Auto Detailing PK",
+      "image": "https://images.unsplash.com/photo-1607860108855-64acf2078ed9",
+      "@id": "https://munirahmed2444-commits.github.io/Auto-Detailing-PK/",
+      "url": "https://munirahmed2444-commits.github.io/Auto-Detailing-PK/",
+      "telephone": "+923017442222",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Northern Bypass, Model Town",
+        "addressLocality": "Multan",
+        "addressRegion": "Punjab",
+        "postalCode": "60000",
+        "addressCountry": "PK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.1575,
+        "longitude": 71.5249
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/AutoDetailingPk/",
+        "https://instagram.com/autodetailingmultan",
+        "https://www.tiktok.com/@autodetailing.pk"
+      ]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -22,16 +69,22 @@
         .dropdown:hover .dropdown-content { display: block; }
         .social-link { transition: all 0.3s ease; }
         .social-link:hover { color: #dc2626; transform: translateY(-2px); }
+
+        /* FIXED: Mobile Navigation visibility */
+        @media (max-width: 768px) {
+            .mobile-nav-visible { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; }
+            .nav-container { flex-direction: column; padding: 10px; }
+        }
     </style>
 </head>
 <body>
     <div id="intro-overlay"><div class="intro-text">AUTO DETAILING</div></div>
     <div class="hero-bg"></div>
 
-    <nav class="flex justify-between items-center p-6 fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
-        <a href="index.html" class="text-2xl font-black text-red-600 uppercase italic tracking-tighter">Auto Detailing</a>
+    <nav class="flex flex-col md:flex-row justify-between items-center p-4 md:p-6 fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5 nav-container">
+        <a href="index.html" class="text-xl md:text-2xl font-black text-red-600 uppercase italic tracking-tighter">Auto Detailing</a>
         
-        <div class="hidden md:flex space-x-8 font-bold uppercase text-[10px] tracking-widest text-white/70">
+        <div class="flex md:flex space-x-4 md:space-x-8 font-bold uppercase text-[9px] md:text-[10px] tracking-widest text-white/70 mt-2 md:mt-0 mobile-nav-visible">
             <a href="about.html" class="hover:text-red-500 transition">About</a>
             <div class="dropdown">
                 <a href="#" class="hover:text-red-500 transition flex items-center gap-1">Products <i class="fas fa-chevron-down text-[8px]"></i></a>
@@ -50,8 +103,8 @@
             <a href="contact.html" class="hover:text-red-500 transition">Contact</a>
         </div>
 
-        <div class="flex items-center gap-6">
-            <div class="hidden sm:flex items-center gap-5 text-white/80">
+        <div class="flex items-center gap-4 md:gap-6 mt-2 md:mt-0">
+            <div class="flex items-center gap-5 text-white/80">
                 <a href="https://www.facebook.com/AutoDetailingPk/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://instagram.com/autodetailingmultan" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@autodetailing.pk" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
@@ -63,27 +116,27 @@
     </nav>
 
     <div class="relative z-10">
-        <section class="min-h-screen flex items-center justify-center px-4">
-            <div class="glass p-10 md:p-16 rounded-[3rem] max-w-4xl text-center border-white/10">
+        <section class="min-h-screen flex items-center justify-center px-4 pt-20">
+            <div class="glass p-8 md:p-16 rounded-[3rem] max-w-4xl text-center border-white/10">
                 <h2 class="text-red-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4 italic">Authorized Nanotek Studio Multan</h2>
-                <h1 class="text-5xl md:text-8xl font-black mb-4 uppercase italic tracking-tighter leading-none">ELITE <span class="text-zinc-500 italic">PPF</span> <br> PROTECTION</h1>
-                <p class="text-[10px] uppercase tracking-[0.4em] text-white/50 font-bold mb-8 italic">Multan's Premier Destination for Automotive Excellence.</p>
+                <h1 class="text-4xl md:text-8xl font-black mb-4 uppercase italic tracking-tighter leading-none">ELITE <span class="text-zinc-500 italic">PPF</span> <br> PROTECTION</h1>
+                <p class="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-white/50 font-bold mb-8 italic">Multan's Premier Destination for Automotive Excellence.</p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="services.html" class="bg-red-600 text-white px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition">Our Services</a>
-                    <a href="contact.html" class="border border-white/40 text-white px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-red-600 hover:border-red-600 transition">Contact Us</a>
+                    <a href="services.html" class="bg-red-600 text-white px-8 md:px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-white hover:text-black transition">Our Services</a>
+                    <a href="contact.html" class="border border-white/40 text-white px-8 md:px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-red-600 hover:border-red-600 transition">Contact Us</a>
                 </div>
             </div>
         </section>
 
         <section class="py-20 px-4">
             <div class="glass w-full max-w-6xl mx-auto rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-2xl border-white/5">
-                <div class="w-full md:w-2/3 h-[450px]">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.332353744673!2d71.4935!3d30.2012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDEyJzA0LjMiTiA3McKwMjknMzYuNiJF!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="w-full md:w-2/3 h-[350px] md:h-[450px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.882142823674!2d71.5149!3d30.1575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA5JzI3LjAiTiA3McKwMzAnNTMuNiJF!5e0!3m2!1sen!2spk!4v1625562222222!5m2!1sen!2spk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div class="w-full md:w-1/3 p-12 bg-zinc-950/80 flex flex-col justify-center">
+                <div class="w-full md:w-1/3 p-8 md:p-12 bg-zinc-950/80 flex flex-col justify-center">
                     <div id="status-badge" class="mb-6 px-4 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.2em] w-fit border border-zinc-800">Checking Studio...</div>
-                    <h3 class="text-3xl font-black italic uppercase mb-2">Visit the <span class="text-red-600">Studio</span></h3>
-                    <p class="text-zinc-500 text-[11px] uppercase font-bold tracking-widest mb-8">Northern Bypass, Model Town, Multan.</p>
+                    <h3 class="text-2xl md:text-3xl font-black italic uppercase mb-2">Visit the <span class="text-red-600">Studio</span></h3>
+                    <p class="text-zinc-500 text-[10px] md:text-[11px] uppercase font-bold tracking-widest mb-8">Northern Bypass, Model Town, Multan.</p>
                     <a href="tel:+923017442222" class="block w-full bg-white text-black text-center py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-red-600 hover:text-white transition">Call Now</a>
                 </div>
             </div>
