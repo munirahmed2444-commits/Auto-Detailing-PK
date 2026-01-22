@@ -6,7 +6,9 @@
     
     <title>Auto Detailing PK | Authorized Nanotek Studio Multan | Elite PPF</title>
     <meta name="description" content="Auto Detailing PK is Multan's premier authorized Nanotek studio. Specialized in Elite PPF, Ceramic Coating, and Diamond White protection. Visit us at Northern Bypass, Multan.">
-    <meta name="keywords" content="Auto Detailing Multan, Nanotek Multan, PPF Pakistan, Ceramic Coating Multan, Car Detailing Pakistan">
+
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <script type="application/ld+json">
     {
@@ -14,7 +16,6 @@
       "@type": "AutoDetailing",
       "name": "Auto Detailing PK",
       "image": "https://images.unsplash.com/photo-1607860108855-64acf2078ed9",
-      "@id": "https://munirahmed2444-commits.github.io/Auto-Detailing-PK/",
       "url": "https://munirahmed2444-commits.github.io/Auto-Detailing-PK/",
       "telephone": "+923017442222",
       "address": {
@@ -24,41 +25,31 @@
         "addressRegion": "Punjab",
         "postalCode": "60000",
         "addressCountry": "PK"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 30.1575,
-        "longitude": 71.5249
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/AutoDetailingPk/",
-        "https://instagram.com/autodetailingmultan",
-        "https://www.tiktok.com/@autodetailing.pk"
-      ]
+      }
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+
     <style>
+        /* Essential CSS remains in head to prevent layout shift */
         body { background: #000; color: #fff; margin: 0; font-family: sans-serif; overflow-x: hidden; }
         #intro-overlay { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; align-items: center; justify-content: center; transition: opacity 1s ease; }
         .intro-text { font-size: clamp(2rem, 8vw, 5rem); font-weight: 900; color: #dc2626; text-transform: uppercase; font-style: italic; letter-spacing: 15px; animation: introZoom 3s forwards; }
         @keyframes introZoom { 0% { opacity: 0; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1); } }
-        .hero-bg { position: fixed; inset: 0; z-index: -1; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2000'); background-size: cover; background-position: center; }
+        
+        /* Speed Fix: Lower resolution for mobile background, high res for desktop */
+        .hero-bg { 
+            position: fixed; inset: 0; z-index: -1; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=60&w=800'); 
+            background-size: cover; background-position: center; 
+        }
+        @media (min-width: 1024px) {
+            .hero-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2000'); }
+        }
+
         .glass { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .whatsapp-btn { animation: pulse-green 2s infinite; }
         @keyframes pulse-green { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); } }
@@ -70,7 +61,6 @@
         .social-link { transition: all 0.3s ease; }
         .social-link:hover { color: #dc2626; transform: translateY(-2px); }
 
-        /* FIXED: Mobile Navigation visibility */
         @media (max-width: 768px) {
             .mobile-nav-visible { display: flex !important; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 5px; }
             .nav-container { flex-direction: column; padding: 10px; }
@@ -105,9 +95,9 @@
 
         <div class="flex items-center gap-4 md:gap-6 mt-2 md:mt-0">
             <div class="flex items-center gap-5 text-white/80">
-                <a href="https://www.facebook.com/AutoDetailingPk/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com/autodetailingmultan" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@autodetailing.pk" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/AutoDetailingPk/" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/autodetailingmultan" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@autodetailing.pk" target="_blank" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
             <a href="https://wa.me/923017442222" target="_blank" class="whatsapp-btn bg-green-600 w-10 h-10 rounded-full flex items-center justify-center text-white">
                 <i class="fab fa-whatsapp text-xl"></i>
@@ -130,8 +120,8 @@
 
         <section class="py-20 px-4">
             <div class="glass w-full max-w-6xl mx-auto rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-2xl border-white/5">
-                <div class="w-full md:w-2/3 h-[350px] md:h-[450px]">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.882142823674!2d71.5149!3d30.1575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA5JzI3LjAiTiA3McKwMzAnNTMuNiJF!5e0!3m2!1sen!2spk!4v1625562222222!5m2!1sen!2spk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="w-full md:w-2/3 h-[350px] md:h-[450px] bg-zinc-900">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.8845!2d71.5249!3d30.1575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA5JzI3LjAiTiA3McKwMzEnMjkuNiJF!5e0!3m2!1sen!2spk!4v1620000000000!5m2!1sen!2spk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Google Maps Location"></iframe>
                 </div>
                 <div class="w-full md:w-1/3 p-8 md:p-12 bg-zinc-950/80 flex flex-col justify-center">
                     <div id="status-badge" class="mb-6 px-4 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.2em] w-fit border border-zinc-800">Checking Studio...</div>
@@ -148,23 +138,30 @@
     </div>
 
     <script>
-        function updateStatus() {
-            const now = new Date();
-            const day = now.getDay(); const hour = now.getHours();
-            const badge = document.getElementById('status-badge');
-            let isOpen = (day !== 5 && hour >= 9 && hour < 20);
-            if (isOpen) {
-                badge.innerText = "● Studio Open Now"; badge.style.color = "#22c55e"; badge.style.borderColor = "#22c55e";
-            } else {
-                badge.innerText = "● Studio Closed"; badge.style.color = "#ef4444"; badge.style.borderColor = "#ef4444";
+        // Speed Fix: Using DOMContentLoaded instead of window.load for faster execution
+        document.addEventListener('DOMContentLoaded', () => {
+            function updateStatus() {
+                const now = new Date();
+                const day = now.getDay(); const hour = now.getHours();
+                const badge = document.getElementById('status-badge');
+                if(!badge) return;
+                let isOpen = (day !== 5 && hour >= 9 && hour < 20);
+                if (isOpen) {
+                    badge.innerText = "● Studio Open Now"; badge.style.color = "#22c55e"; badge.style.borderColor = "#22c55e";
+                } else {
+                    badge.innerText = "● Studio Closed"; badge.style.color = "#ef4444"; badge.style.borderColor = "#ef4444";
+                }
             }
-        }
-        window.addEventListener('load', () => {
             updateStatus();
+            
+            // Speed Fix: Reduced intro delay for better UX score
             setTimeout(() => {
-                document.getElementById('intro-overlay').style.opacity = '0';
-                setTimeout(() => { document.getElementById('intro-overlay').style.display = 'none'; }, 1000);
-            }, 2500);
+                const overlay = document.getElementById('intro-overlay');
+                if(overlay) {
+                    overlay.style.opacity = '0';
+                    setTimeout(() => { overlay.style.display = 'none'; }, 1000);
+                }
+            }, 1500); 
         });
     </script>
 </body>
