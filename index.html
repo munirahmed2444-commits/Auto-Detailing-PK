@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Detailing PK | Authorized Nanotek Studio Multan | Elite PPF</title>
-    <meta name="description" content="Auto Detailing PK is Multan's premier authorized Nanotek studio. Specialized in Elite PPF, Ceramic Coating, and Diamond White protection.">
+    <meta name="description" content="Auto Detailing PK is Multan's premier authorized Nanotek studio. Specialized in Elite PPF, Ceramic Coating, and Diamond White protection. Visit us at Northern Bypass, Multan.">
 
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -100,8 +100,14 @@
         <section class="map-container">
             <div class="map-iframe">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.332304913257!2d71.49135017555891!3d30.25035257481977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3508b117f831%3A0xbd6963497762c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2s!4v1731671234567!5m2!1sen!2s" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.3371661642874!2d71.49122557626966!3d30.25595567481585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3508b117f831%3A0xbd6963497762c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
             <div class="map-info" style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
                 <div id="status-badge" style="display:inline-block; padding:3px 12px; border-radius:99px; font-size:8px; font-weight:900; border:1px solid #333; margin-bottom:1rem; width: fit-content;">Checking...</div>
@@ -120,6 +126,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const badge = document.getElementById('status-badge');
             const now = new Date();
+            // Closed on Fridays (Day 5)
             const isOpen = (now.getDay() !== 5 && now.getHours() >= 9 && now.getHours() < 20);
             if(badge) {
                 badge.innerText = isOpen ? "● Studio Open" : "● Studio Closed";
