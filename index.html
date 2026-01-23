@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Detailing PK | Authorized Nanotek Studio Multan | Elite PPF</title>
-    <meta name="description" content="Auto Detailing PK is Multan's premier authorized Nanotek studio. Specialized in Elite PPF, Ceramic Coating, and Diamond White protection.">
+    <meta name="description" content="Auto Detailing PK is Multan's premier authorized Nanotek studio. Specialized in Elite PPF, Ceramic Coating, and Diamond White protection. Visit us at Northern Bypass, Multan.">
 
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 
     <style>
-        :root { --red: #dc2626; --glass: rgba(0, 0, 0, 0.85); --text-dim: #a1a1aa; }
-        body { background: #000; color: #fff; margin: 0; font-family: system-ui, -apple-system, sans-serif; overflow-x: hidden; }
+        :root { --red: #dc2626; --glass: rgba(0, 0, 0, 0.8); --text-dim: #a1a1aa; }
+        body { background: #000; color: #fff; margin: 0; font-family: system-ui, -apple-system, sans-serif; overflow-x: hidden; line-height: 1.5; }
         
         #intro-overlay { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease; pointer-events: none; }
         .intro-text { font-size: clamp(1.5rem, 6vw, 4rem); font-weight: 900; color: var(--red); text-transform: uppercase; font-style: italic; letter-spacing: 10px; animation: introZoom 2s forwards; }
@@ -21,30 +21,33 @@
         .hero-bg { position: fixed; inset: 0; z-index: -1; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=40&w=600'); background-size: cover; background-position: center; }
         @media (min-width: 1024px) { .hero-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=70&w=1600'); } }
 
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(0,0,0,0.7); backdrop-filter: blur(12px); box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .logo { font-size: 1.25rem; font-weight: 900; color: var(--red); text-transform: uppercase; font-style: italic; text-decoration: none; }
         
         .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-        .nav-links a { color: #fff; text-decoration: none; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--red); }
 
         .dropdown { position: relative; display: inline-block; }
-        .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: #0a0a0a; min-width: 200px; border: 1px solid #333; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: #0a0a0a; min-width: 200px; border: 1px solid #333; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 110; }
         .dropdown:hover .dropdown-content { display: block; }
         .dropdown-content a { display: block; padding: 0.8rem 1.2rem; font-size: 9px; border-bottom: 1px solid #111; }
 
-        .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer; }
+        .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer; padding: 5px; }
 
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #000; padding: 1.5rem; border-bottom: 1px solid #222; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #000; padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid #222; }
             .nav-links.active { display: flex; }
-            .dropdown-content { position: static; background: #111; border: none; width: 100%; }
+            .dropdown-content { position: static; background: #111; border: none; width: 100%; margin-top: 10px; }
         }
 
         .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 1rem; }
         .glass { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); border-radius: 2rem; padding: 3rem 2rem; max-width: 800px; text-align: center; }
+        
         .btn-red { background: var(--red); color: #fff; padding: 0.9rem 2.2rem; border-radius: 99px; text-decoration: none; font-weight: 900; font-size: 10px; text-transform: uppercase; transition: 0.3s; display: inline-block; }
-        .whatsapp-btn { background: #16a34a; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; }
+        .whatsapp-btn { background: #16a34a; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; animation: pulse-green 2s infinite; text-decoration: none; }
+        @keyframes pulse-green { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); } 100% { transform: scale(0.95); } }
 
         .map-container { display: flex; flex-direction: column; max-width: 1100px; margin: 4rem auto; border-radius: 2rem; overflow: hidden; background: #0a0a0a; border: 1px solid #222; }
         .map-iframe { width: 100%; height: 400px; background: #111; }
@@ -52,34 +55,40 @@
     </style>
 </head>
 <body>
-    <div id="intro-overlay"><div class="intro-text">AUTO DETAILING</div></div>
-    <div class="hero-bg" role="img" aria-label="Car Background"></div>
+    <div id="intro-overlay" role="presentation"><div class="intro-text">AUTO DETAILING</div></div>
+    <div class="hero-bg" role="img" aria-label="Car background"></div>
 
-    <nav>
-        <a href="index.html" class="logo">Auto Detailing</a>
-        <button class="menu-toggle" onclick="document.getElementById('main-nav').classList.toggle('active')"><i class="fas fa-bars"></i></button>
-        <div class="nav-links" id="main-nav">
-            <a href="about.html">About</a>
-            <div class="dropdown">
-                <a href="#" onclick="return false;">Products <i class="fas fa-chevron-down" style="font-size: 8px;"></i></a>
-                <div class="dropdown-content">
-                    <a href="nanotek-prime.html">Nanotek Prime</a>
-                    <a href="nanotek-ultimate-pro.html">Ultimate Pro</a>
-                    <a href="nanotek-prime-plus.html">Prime Plus</a>
-                    <a href="nanotek-satin.html">Nanotek Satin</a>
-                    <a href="gloss-black.html">Gloss Black</a>
-                    <a href="matte-black.html">Matte Black</a>
-                    <a href="diamond-white.html">Diamond White</a>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Auto Detailing</a>
+            <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <div class="dropdown">
+                    <a href="#" onclick="return false;">Products <i class="fas fa-chevron-down" style="font-size: 8px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="nanotek-prime.html">Nanotek Prime</a>
+                        <a href="nanotek-ultimate-pro.html">Ultimate Pro</a>
+                        <a href="nanotek-prime-plus.html">Prime Plus</a>
+                        <a href="nanotek-satin.html">Nanotek Satin</a>
+                        <a href="gloss-black.html">Gloss Black</a>
+                        <a href="matte-black.html">Matte Black</a>
+                        <a href="diamond-white.html">Diamond White</a>
+                    </div>
                 </div>
+                <a href="services.html">Services</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html">Contact</a>
             </div>
-            <a href="services.html">Services</a>
-            <a href="booking.html">Booking</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <a href="https://wa.me/923017442222" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
-    </nav>
+            <a href="https://wa.me/923017442222" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </nav>
+    </header>
 
-    <main style="margin-top: 80px;">
+    <main>
         <section class="hero-section">
             <div class="glass">
                 <p style="color:var(--red); font-weight:900; text-transform:uppercase; letter-spacing:4px; font-size:9px; margin-bottom:1rem;">Authorized Nanotek Studio Multan</p>
@@ -91,12 +100,11 @@
 
         <section class="map-container">
             <div class="map-iframe">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.8286071413815!2d71.49124407632194!3d30.21342677484042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3b085c17f831%3A0xbd66635977ee0677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2spk!4v1705900000000!5m2!1sen!2spk" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.337584145941!2d71.4938676!3d30.250567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b35081c17f831%3A0xbd6963597722c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2s!4v1737648356942!5m2!1sen!2s" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="map-info" style="padding: 2.5rem; flex: 1;">
-                <div id="status-badge" style="display:inline-block; padding:3px 12px; border-radius:99px; font-size:8px; font-weight:900; border:1px solid #333; margin-bottom:1rem;">Checking...</div>
+            <div class="map-info" style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                <div id="status-badge" style="display:inline-block; padding:3px 12px; border-radius:99px; font-size:8px; font-weight:900; border:1px solid #333; margin-bottom:1rem; width: fit-content;">Checking...</div>
                 <h2 style="font-size:1.6rem; font-weight:900; font-style:italic; text-transform:uppercase; margin-bottom:0.5rem;">Visit the <span style="color:var(--red)">Studio</span></h2>
                 <address style="color:var(--text-dim); font-size:11px; font-weight:700; text-transform:uppercase; margin-bottom:2rem; font-style:normal; letter-spacing: 1px;">Northern Bypass, Model Town, Multan.</address>
                 <a href="tel:+923017442222" class="btn-red" style="width:100%; text-align:center; box-sizing:border-box;">Call Now</a>
@@ -104,10 +112,15 @@
         </section>
     </main>
 
+    <footer style="padding: 3rem 0; text-align:center; color:#444; font-size:9px; text-transform:uppercase; letter-spacing:0.5em; font-weight:bold;">
+        © 2025 AUTO DETAILING & PPF | AUTHORIZED NANOTEK MULTAN
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const badge = document.getElementById('status-badge');
             const now = new Date();
+            // Closed on Friday (5)
             const isOpen = (now.getDay() !== 5 && now.getHours() >= 9 && now.getHours() < 20);
             if(badge) {
                 badge.innerText = isOpen ? "● Studio Open" : "● Studio Closed";
@@ -116,7 +129,10 @@
             }
             setTimeout(() => {
                 const overlay = document.getElementById('intro-overlay');
-                if(overlay) { overlay.style.opacity = '0'; setTimeout(() => overlay.remove(), 800); }
+                if(overlay) {
+                    overlay.style.opacity = '0';
+                    setTimeout(() => overlay.remove(), 800);
+                }
             }, 1000);
         });
     </script>
