@@ -101,7 +101,7 @@
         <section class="map-container">
             <div class="map-iframe">
                 <iframe 
-                    src="https://www.google.com/maps?q=Auto+Detailing+%26+PPF+Northern+Bypass+Multan&output=embed" 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13794.12053075276!2d71.4938221!3d30.2504694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3508b117f831%3A0xbd6663597762c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2spk!4v1731688640000!5m2!1sen!2spk" 
                     width="100%" 
                     height="100%" 
                     style="border:0;" 
@@ -127,7 +127,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const badge = document.getElementById('status-badge');
             const now = new Date();
-            // Friday check: Closed on Friday (5)
+            // Closed on Friday (5)
             const isOpen = (now.getDay() !== 5 && now.getHours() >= 9 && now.getHours() < 20);
             if(badge) {
                 badge.innerText = isOpen ? "● Studio Open" : "● Studio Closed";
