@@ -8,23 +8,19 @@
 
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 
     <style>
         :root { --red: #dc2626; --glass: rgba(0, 0, 0, 0.8); --text-dim: #a1a1aa; }
         body { background: #000; color: #fff; margin: 0; font-family: system-ui, -apple-system, sans-serif; overflow-x: hidden; line-height: 1.5; }
         
-        /* Intro Animation */
         #intro-overlay { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease; pointer-events: none; }
         .intro-text { font-size: clamp(1.5rem, 6vw, 4rem); font-weight: 900; color: var(--red); text-transform: uppercase; font-style: italic; letter-spacing: 10px; animation: introZoom 2s forwards; }
         @keyframes introZoom { 0% { opacity: 0; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
 
-        /* Background Optimization */
         .hero-bg { position: fixed; inset: 0; z-index: -1; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=40&w=600'); background-size: cover; background-position: center; }
         @media (min-width: 1024px) { .hero-bg { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=70&w=1600'); } }
 
-        /* Optimized Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .logo { font-size: 1.25rem; font-weight: 900; color: var(--red); text-transform: uppercase; font-style: italic; text-decoration: none; }
         
@@ -32,14 +28,11 @@
         .nav-links a { color: #fff; text-decoration: none; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: var(--red); }
 
-        /* Dropdown for All 7 Products */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: #0a0a0a; min-width: 200px; border: 1px solid #333; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 110; }
         .dropdown:hover .dropdown-content { display: block; }
         .dropdown-content a { display: block; padding: 0.8rem 1.2rem; font-size: 9px; border-bottom: 1px solid #111; }
-        .dropdown-content a:last-child { border-bottom: none; }
 
-        /* Mobile Menu Logic */
         .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer; padding: 5px; }
 
         @media (max-width: 768px) {
@@ -49,37 +42,32 @@
             .dropdown-content { position: static; background: #111; border: none; width: 100%; margin-top: 10px; }
         }
 
-        /* Hero & Sections */
         .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 1rem; }
         .glass { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); border-radius: 2rem; padding: 3rem 2rem; max-width: 800px; text-align: center; }
         
         .btn-red { background: var(--red); color: #fff; padding: 0.9rem 2.2rem; border-radius: 99px; text-decoration: none; font-weight: 900; font-size: 10px; text-transform: uppercase; transition: 0.3s; display: inline-block; }
-        .btn-red:hover { background: #fff; color: #000; }
-
         .whatsapp-btn { background: #16a34a; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; animation: pulse-green 2s infinite; text-decoration: none; }
         @keyframes pulse-green { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); } 100% { transform: scale(0.95); } }
 
         .map-container { display: flex; flex-direction: column; max-width: 1100px; margin: 4rem auto; border-radius: 2rem; overflow: hidden; background: #0a0a0a; border: 1px solid #222; }
-        .map-iframe { width: 100%; height: 350px; }
+        .map-iframe { width: 100%; height: 400px; background: #111; }
         @media (min-width: 768px) { .map-container { flex-direction: row; } .map-iframe { width: 66%; } }
     </style>
 </head>
 <body>
     <div id="intro-overlay" role="presentation"><div class="intro-text">AUTO DETAILING</div></div>
-    <div class="hero-bg" role="img" aria-label="Professional car detailing studio background"></div>
+    <div class="hero-bg" role="img" aria-label="Car background"></div>
 
     <header>
         <nav>
             <a href="index.html" class="logo">Auto Detailing</a>
-            
-            <button class="menu-toggle" aria-label="Open navigation menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
                 <i class="fas fa-bars"></i>
             </button>
-
-            <div class="nav-links" id="main-nav">
+            <div class="nav-links">
                 <a href="about.html">About</a>
                 <div class="dropdown">
-                    <a href="#" onclick="return false;" aria-haspopup="true">Products <i class="fas fa-chevron-down" style="font-size: 8px;"></i></a>
+                    <a href="#" onclick="return false;">Products <i class="fas fa-chevron-down" style="font-size: 8px;"></i></a>
                     <div class="dropdown-content">
                         <a href="nanotek-prime.html">Nanotek Prime</a>
                         <a href="nanotek-ultimate-pro.html">Ultimate Pro</a>
@@ -94,8 +82,7 @@
                 <a href="booking.html">Booking</a>
                 <a href="contact.html">Contact</a>
             </div>
-
-            <a href="https://wa.me/923017442222" target="_blank" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+            <a href="https://wa.me/923017442222" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </nav>
@@ -107,17 +94,15 @@
                 <p style="color:var(--red); font-weight:900; text-transform:uppercase; letter-spacing:4px; font-size:9px; margin-bottom:1rem;">Authorized Nanotek Studio Multan</p>
                 <h1 style="font-size: clamp(2.2rem, 9vw, 5rem); font-weight:900; margin:0 0 1.5rem 0; font-style:italic; line-height:1;">ELITE <span style="color:var(--text-dim)">PPF</span> PROTECTION</h1>
                 <p style="color:rgba(255,255,255,0.9); font-size:10px; text-transform:uppercase; letter-spacing:3px; margin-bottom:2rem;">Multan's Premier Destination for Automotive Excellence.</p>
-                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-                    <a href="services.html" class="btn-red">Our Services</a>
-                </div>
+                <a href="services.html" class="btn-red">Our Services</a>
             </div>
         </section>
 
         <section class="map-container">
             <div class="map-iframe">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.8385458023573!2d71.493441!3d30.2131971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3508b117f831%3A0xbd67635977e2c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2s!4v1738200000000!5m2!1sen!2s" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Google Maps - Auto Detailing & PPF Multan Location"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.8543781352424!2d71.49122557555054!3d30.212686774840427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b3508b117f831%3A0xbd6663497762c677!2sAuto%20Detailing%20%26%20PPF!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Studio Location"></iframe>
             </div>
             <div class="map-info" style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; justify-content: center;">
                 <div id="status-badge" style="display:inline-block; padding:3px 12px; border-radius:99px; font-size:8px; font-weight:900; border:1px solid #333; margin-bottom:1rem; width: fit-content;">Checking...</div>
